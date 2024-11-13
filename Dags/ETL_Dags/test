@@ -1,0 +1,8 @@
+import boto3
+
+dynamodb = boto3.client('dynamodb', region_name='us-east-1')  # Use the correct region
+
+response = dynamodb.list_tables()
+print("DynamoDB Tables:")
+for table_name in response['TableNames']:
+    print(table_name)
